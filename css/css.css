@@ -1,0 +1,82 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0; padding: 0; border: 0;}
+ul li{list-style: none;}
+img{display: block;}
+a{text-decoration: none;}
+
+html {
+	font-family: "微软雅黑";
+    font-size: 14px;
+}
+.clear{clear: both;}
+.header,.fooder{background: #000;color: #fff;}
+.fooder{text-align: center; line-height: 45px;}
+.header{padding:15px 0px; overflow: hidden; }
+.header ul.nav{float: right;line-height: 35px;}
+.header ul.nav li{float: left; padding:0px 15px;}
+.header ul.nav li a{display: block; color: #fff;font-weight: 600;}
+.header ul.nav li a:hover{color:forestgreen; border-bottom: 2px solid forestgreen;}
+.starter_container {
+    padding-top:150px;
+    min-width: 100%;
+    height: 100%;
+    background: url(../images/steak.jpg) no-repeat center center;
+    background-size: cover;
+    text-align: center;
+    background-position: center;  
+}
+.follow_container {
+    width: 100%;
+    position: absolute;
+    top: 35%;
+    text-align: center;
+}
+.starter_follow {
+    display: inline-block;
+    width: 80%;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 0;
+}
+.top-title{
+    color: white;
+    
+    font-size: 120px;
+    font-weight: 400;
+ }
+.second-title {
+    font-weight: lighter; 
+    font-size: 30px; 
+    font-style: italic; 
+    text-transform: capitalize;
+	color: #fff;
+}
+.banner{background: url(../images/banner.jpg) no-repeat top center; background-size: 100%;height:550px;; overflow: hidden;
+}
+.warp{width:1100px; margin: 35px auto;}
+.infot{float: left; width:350px;}
+.infot p{line-height: 28px;}
+.infot h2{display: block; width:200px; border: 1px double #000;line-height: 45px;height:45px; margin: 0 auto; text-align: center;}
+.picbox{width:640px; float: right;}
+.picbox li{float: left;width:320px;}
+.picbox li img{width:320px;height:185px;}
+h1{line-height: 85px; text-align: center;}
+.text p{line-height: 28px; margin-bottom: 15px; text-indent: 2em;}
+.clears{ clear:both;}
+/*messages*/
+.messages{padding:15px 0;}
+.messages input,.messages select,.messages textarea{margin:0;padding:0; background:none; border:0; }
+.messlist {height:30px;margin-bottom:10px;}
+.messlist label{float:left;width:100px; height:30px; font-size:14px; line-height:30px; text-align:right;padding-right:10px;}
+.messlist input{float:left;width:300px;height:28px;padding-left:5px;border:#ccc 1px solid;}
+.messlist.textareas{ height:auto;}
+.messlist textarea{float:left;width:400px; height:110px;padding:5px;border:#ccc 1px solid;}
+.messlist.yzms input{width:100px;}
+.messlist.yzms .yzmimg{ float:left;margin-left:10px;}
+.messsub{padding:0px 0 0 110px;}
+.messsub input{width:100px; height:35px; background:#ddd; font-size:14px; font-weight:bold; cursor:pointer;margin-right:5px}
+.messsub input:hover{ background:#f60;color:#fff;}
+.imgbox ul li{float: left; width:232px; margin-right:25px; margin-bottom: 25px;}
+.imgbox ul li img{width:232px;}
+.imgbox ul li p{line-height: 40px; text-align: center; margin-top: -40px; color: #000;}
