@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>621354012037 李冰</title>
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1"/>
+	<style>
+		.my-table {
+			display: grid;
+			grid-template-columns: 20% 25% 1fr;
+			font-size: 14px;
+		}
+		.my-table > div{
+			display: flex;
+			padding: 10px 0;
+			align-items: center;
+			padding-right: 10px;
+		}
+		.my-table input,.my-table select {
+			width: 100%;
+			height: 25px;
+    		box-sizing: border-box;
+    		outline: none;
+		}
+		table {
+			border-collapse: collapse;
+		}
+		table td {
+			border: 1px solid #d3d3d3;
+    		line-height: 24px;
+    		height: 24px;
+    		padding: 3px 12px;
+    		background: #fff;
+		}
+		.result {
+			color: red;
+			font-weight: bold;
+			font-size: 20px;
+		}
+		.button {
+			margin-right: 10px;
+			cursor: pointer;
+			border-radius: 0;
+			outline: none;
+			background: #9e9e9e;
+    		color: #444;
+    		border: 2px solid #888;
+    		width: 100px;
+    		height: 30px;
+		}
+		.button.active {
+    		box-shadow: 0 0 3px 1px #250523 inset;
+		}
+		#container {
+			width:650px;
+			max-width: 95%;
+			margin: 0 auto;
+			border: 1px solid #585857;
+			padding: 5px;
+			background: #bdbdbd;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		
+		<div class="buttons" style="text-align: center;">
+			<button id="countAll" class="button active">年度汇缴</button>
+			<button id="countMonth" class="button">月度缴税计算</button>
+		</div>
+		<div class="my-table">
+		<div class="for-all-year">旧单位月薪：</div>
+		<div class="for-all-year"><input type="number" name="old"></div>
+		<div class="for-all-year">¥（人民币）</div>
+		<div>现单位月薪：</div>
+		<div><input type="number" name="new"></div>
+		<div>¥（人民币）</div>
+		<div class="for-all-year">单位更换月份：</div>
+		<div class="for-all-year">
+			<select name="changemonth" style="width:50px;">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9" selected="true">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+			</select>
+		</div>
+		<div class="for-all-year">注：新单位上班的第一个月份</div>
+		<div style="display:none;" class="for-one-month">年度缴税的第几个月：</div>
+		<div style="display:none;" class="for-one-month">
+			<select name="paymonth" style="width:50px;">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6" selected="true">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+			</select>
+		</div>
+		<div style="display:none;" class="for-one-month"></div>
+		<div>专项扣除(每月)：</div>
+		<div><input type="number" name="special" value="2500"></div>
+		<div>¥（人民币）</div>
+		<div>五险一金(每月)：</div>
+		<div><input type="number" name="fiveone" value="547"></div>
+		<div>¥（人民币）， 注：默认按最低基数缴纳</div>
+		<div style="font-weight: bold;" class="result-tip">需要补缴：</div>
+		<div class="result">?</div>
+		<div></div>
+		<div style="grid-column-start: 1;grid-column-end:4;" class="for-all-year">注：计算最终结果：正数表示需要补扣，负数表示要退税</div>
+	</div>
+	<div style="background: yellow;display: inline-block;padding:5px;border:1px solid #ccc;">
+		居民个人综合所得适用个人所得税税率表：
+		<table>
+			<tbody>
+				<tr>
+					<td>级数</td>
+					<td>全年应纳税所得额</td>
+					<td>税率（％）</td>
+					<td>速算扣除数</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>不超过36000元的部分</td>
+					<td>3</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>超过36000元至144000元的部分</td>
+					<td>10</td>
+					<td>2520</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>超过144000元至300000元的部分</td>
+					<td>20</td>
+					<td>16920</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>超过300000元至420000元的部分</td>
+					<td>25</td>
+					<td>31920</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>超过420000元至660000元的部分</td>
+					<td>30</td>
+					<td>52920</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>超过660000元至960000元的部分</td>
+					<td>35</td>
+					<td>85920</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>超过960000元的部分</td>
+					<td>45</td>
+					<td>181920</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+<h1 style="text-align: center;">621354012037 李冰
+<br>
+<a href="1.HTML">原型线框图设计</a>
+<a href="2.HTML">高保真原型图</a>
+</h1>
+
+</body>
+</html>
